@@ -8,12 +8,12 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 ## 🛠️ PRINCIPIOS FUNDAMENTALES (Core Values)
 
-1. **Zero Hallucination Policy:** Prohibido inventar experiencias, tecnologías o logros. Cada palabra en el output debe estar respaldada por el `private/perfil_base.md`.
+1. **Zero Hallucination Policy:** Prohibido inventar experiencias, tecnologías o logros. Cada palabra en el output debe estar respaldada por el `../private/perfil_base.md`.
 2. **High Signal to Noise:** Priorizar el impacto sobre las tareas. Cada bullet point debe decir _qué hiciste_, _cómo lo hiciste_ (technically) y _qué impacto tuvo_ (business/ops).
 3. **AI Native Identity:** Posicionar al usuario como un "Builder" que utiliza agentes de IA para escalar su capacidad técnica y operativa.
 4. **Strategic Alignment First:** No se redacta nada sin antes calcular el SAS (Strategic Alignment Score). Si no hay match, se reporta al usuario.
-5. **Brand Coherence:** Todo output debe reflejar la voz y estilo documentados en `private/brand_voice.md`. No basta con ser preciso; debe sonar auténtico.
-6. **Contenido Iterativo:** Ningún output es final hasta que el usuario lo apruebe. Todo contenido generado (Killer Summary, Impact Bullets, respuestas Q&A) debe ser discutido y refinado colaborativamente. Los ajustes acordados alimentan `private/learnings.md` para mejorar futuras sesiones.
+5. **Brand Coherence:** Todo output debe reflejar la voz y estilo documentados en `../private/brand_voice.md`. No basta con ser preciso; debe sonar auténtico.
+6. **Contenido Iterativo:** Ningún output es final hasta que el usuario lo apruebe. Todo contenido generado (Killer Summary, Impact Bullets, respuestas Q&A) debe ser discutido y refinado colaborativamente. Los ajustes acordados alimentan `../private/learnings.md` para mejorar futuras sesiones.
 7. **Web Research Activo:** Si el agente tiene capacidades de búsqueda web, DEBE usarlas proactivamente para investigar la empresa, cultura, stack tecnológico y noticias recientes.
 
 ---
@@ -141,7 +141,7 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 - **Impact Bullets:** Redactar experiencia laboral usando estructura: `[Acción] + [Contexto/Complejidad] + [Resultado Cuantificable]`
 - **Skills Matrix:** Matriz de 1 a 5 basada en el dominio real documentado (ver escala abajo).
 
-**Referencia obligatoria:** Consultar `private/brand_voice.md` para tono y estilo.
+**Referencia obligatoria:** Consultar `../private/brand_voice.md` para tono y estilo.
 
 ### Fase 4: Application Support (Q&A)
 
@@ -163,7 +163,7 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 - Chequeo de ortografía y tono.
 - Verificación cruzada: ¿Lo que dice el CV es verificable en LinkedIn?
-- Verificación contra `private/perfil_base.md`: ¿Cada afirmación tiene respaldo?
+- Verificación contra `../private/perfil_base.md`: ¿Cada afirmación tiene respaldo?
 - Preparación de "Interview Intel" (Preguntas probables de la entrevista).
 
 ### Fase 6: Auditoría de Coherencia de Marca (NUEVA)
@@ -174,11 +174,11 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 | Criterio | Pregunta de Verificación | Referencia |
 |----------|-------------------------|------------|
-| **Match de Tono** | ¿El lenguaje refleja la voz documentada? | `private/brand_voice.md` |
-| **Refuerzo del Pilar** | ¿Cada logro refuerza "The Bridge"? | `private/perfil_base.md` |
-| **Visibilidad del Ethos** | ¿Se evidencia curiosidad, conexión humana, optimización? | `private/perfil_base.md` |
-| **Balance Técnico/Negocio** | ¿Hay 50/50 entre código e impacto de negocio? | `private/brand_voice.md` |
-| **Red Lines** | ¿Se violó alguna restricción absoluta? | `private/perfil_base.md` Non-Negotiables |
+| **Match de Tono** | ¿El lenguaje refleja la voz documentada? | `../private/brand_voice.md` |
+| **Refuerzo del Pilar** | ¿Cada logro refuerza "The Bridge"? | `../private/perfil_base.md` |
+| **Visibilidad del Ethos** | ¿Se evidencia curiosidad, conexión humana, optimización? | `../private/perfil_base.md` |
+| **Balance Técnico/Negocio** | ¿Hay 50/50 entre código e impacto de negocio? | `../private/brand_voice.md` |
+| **Red Lines** | ¿Se violó alguna restricción absoluta? | `../private/perfil_base.md` Non-Negotiables |
 | **Coherencia Narrativa** | ¿El CV cuenta UNA historia convincente? | - |
 
 **Output:** Incluir en el documento final una sección "Brand Coherence Audit" con ✅/❌ por cada criterio.
@@ -205,14 +205,14 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 **Proceso de Consolidación:**
 
-1. Registrar insights en `private/learnings.md` con la plantilla estándar
+1. Registrar insights en `../private/learnings.md` con la plantilla estándar
 2. Si el usuario valida el learning, consolidar inmediatamente en el documento correspondiente:
-   - Non-negotiables → `private/perfil_base.md` sección 🚫 NON-NEGOTIABLES
-   - Ajustes de voz → `private/brand_voice.md` sección correspondiente
-   - Contexto nuevo → `private/perfil_base.md` sección correspondiente
+   - Non-negotiables → `../private/perfil_base.md` sección 🚫 NON-NEGOTIABLES
+   - Ajustes de voz → `../private/brand_voice.md` sección correspondiente
+   - Contexto nuevo → `../private/perfil_base.md` sección correspondiente
 3. Marcar el learning como `[x] Consolidado` con referencia
 
-**Output:** Actualización de `private/learnings.md` + consolidación directa en documentos base si aplica.
+**Output:** Actualización de `../private/learnings.md` + consolidación directa en documentos base si aplica.
 
 ---
 
@@ -226,7 +226,7 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 | **2** | En aprendizaje | Entiende los conceptos, lo ha usado con asistencia/IA |
 | **1** | Conocimiento | Sabe que existe, ha leído documentación |
 
-**Regla:** Solo asignar puntaje basado en lo documentado en `private/perfil_base.md`. Si una tecnología está en "En Aprendizaje", máximo puntaje es 2.
+**Regla:** Solo asignar puntaje basado en lo documentado en `../private/perfil_base.md`. Si una tecnología está en "En Aprendizaje", máximo puntaje es 2.
 
 ---
 
@@ -236,8 +236,8 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 **Documentos a leer antes de operar:**
 1. `AGENT_START.md` - Checklist de intake y requisitos
-2. `private/perfil_base.md` - Fuente de verdad (experiencia, skills, restricciones)
-3. `private/brand_voice.md` - Guía de tono y estilo
+2. `../private/perfil_base.md` - Fuente de verdad (experiencia, skills, restricciones)
+3. `../private/brand_voice.md` - Guía de tono y estilo
 
 **Comando de inicio esperado:**
 > "He procesado el protocolo. Tengo acceso a [perfil_base.md] y [brand_voice.md]. Iniciando Fase 1: Research & Culture Radar para [Nombre de Empresa]."
@@ -332,7 +332,7 @@ Cada CV optimizado debe seguir esta estructura:
 | Sin Web Search | Solicitar info de empresa al usuario |
 | Context muy limitado (<32k) | Dividir en sesiones (Fases 1-3, 4-7) |
 | Sin procesamiento de PDFs | Usuario copia/pega contenido de CVs |
-| Modelo con tendencia a alucinar | Pedir citas explícitas de `private/perfil_base.md` en cada afirmación |
+| Modelo con tendencia a alucinar | Pedir citas explícitas de `../private/perfil_base.md` en cada afirmación |
 
 ### Modelos Validados (2025)
 
@@ -348,10 +348,10 @@ Cada CV optimizado debe seguir esta estructura:
 | Archivo | Propósito | Cuándo Usar |
 |---------|-----------|-------------|
 | `AGENT_START.md` | Entry point para agentes - checklist de intake | Siempre primero |
-| `private/perfil_base.md` | Fuente de verdad del usuario | Siempre |
-| `private/brand_voice.md` | Especificaciones de voz y estilo | Fases 3, 6 |
+| `../private/perfil_base.md` | Fuente de verdad del usuario | Siempre |
+| `../private/brand_voice.md` | Especificaciones de voz y estilo | Fases 3, 6 |
 | `scoring_protocol.md` | Fórmulas y rubricas de cálculo de scores | Fase 2 |
 | `framework_protocol.md` | Este documento - reglas y fases | Siempre |
-| `private/learnings.md` | Registro de aprendizajes y evolución | Fase 7 |
+| `../private/learnings.md` | Registro de aprendizajes y evolución | Fase 7 |
 | `roadmap.md` | Visión de producto | Si se pregunta |
-| `private/outputs/` | CVs generados |
+| `../private/outputs/` | CVs generados |

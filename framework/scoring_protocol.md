@@ -39,7 +39,7 @@ Clasificar cada requisito en:
 | **Obligatorio** | "Required", "Must have", "Imprescindible", "Requisito", sin calificador |
 | **Deseable** | "Nice to have", "Preferred", "Deseable", "Plus", "Bonus" |
 
-#### Paso 2: Evaluar Match contra `private/perfil_base.md`
+#### Paso 2: Evaluar Match contra `../private/perfil_base.md`
 
 Para cada requisito, asignar uno de estos estados:
 
@@ -284,7 +284,7 @@ Al reportar scores en el CV optimizado, incluir:
 
 ## 5. ACTUALIZACIÓN DE CRITERIOS
 
-Los criterios de este protocolo deben evolucionar junto con `private/perfil_base.md`:
+Los criterios de este protocolo deben evolucionar junto con `../private/perfil_base.md`:
 
 - **Metas de carrera:** Actualizar si cambian las prioridades
 - **Motivaciones:** Refinar basado en learnings de Fase 7

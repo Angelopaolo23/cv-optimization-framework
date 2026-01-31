@@ -16,9 +16,10 @@ Este documento sirve como la fuente de verdad única para la generación de cont
 
 ## 🎙️ VOICE PROFILE (Referencia de Marca)
 
-> **Documento completo:** Ver `brand_voice.template.md` para especificaciones detalladas.
+> **Documento completo:** Ver `brand_voice.md` para especificaciones detalladas.
 
 **Resumen de voz en 5 líneas:**
+
 1. **Tono:** [Ej: Profesional pero accesible, técnico pero humano]
 2. **Estructura:** [Ej: Storytelling con datos, bullets concisos]
 3. **Balance:** [Ej: 50% técnico / 50% impacto de negocio]
@@ -44,18 +45,22 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 **NUNCA incluir en ningún output:**
 
 ### Sobre Experiencia:
+
 - ❌ [Restricción específica sobre experiencia que no tienes]
 - ❌ [Otra restricción]
 
 ### Sobre Métricas:
+
 - ❌ Porcentajes o números no documentados en este perfil
 - ❌ Métricas de impacto inventadas
 
 ### Sobre Posicionamiento:
+
 - ❌ [Cosas que no debes afirmar]
 - ❌ [Proyectos/skills en progreso que no deben presentarse como completados]
 
 ### Sobre Tono:
+
 - ❌ Superlativos vacíos ("el mejor", "excepcional", "world-class")
 - ❌ Lenguaje desesperado o servil
 
@@ -69,13 +74,13 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 
 ## 🛠️ THE POWER STACK (Habilidades Duras)
 
-| Categoría | Tecnologías (Dominio Actual) | En Aprendizaje |
-|:----------|:-----------------------------|:---------------|
-| **Lenguajes** | [Listar con nivel de experiencia] | [En progreso] |
-| **Frontend** | [Frameworks, herramientas] | [En progreso] |
-| **Backend & DB** | [Lenguajes, DBs, servicios] | [En progreso] |
-| **Cloud/DevOps** | [Plataformas, herramientas] | [En progreso] |
-| **Otros** | [Herramientas adicionales] | [En progreso] |
+| Categoría        | Tecnologías (Dominio Actual)      | En Aprendizaje |
+| :--------------- | :-------------------------------- | :------------- |
+| **Lenguajes**    | [Listar con nivel de experiencia] | [En progreso]  |
+| **Frontend**     | [Frameworks, herramientas]        | [En progreso]  |
+| **Backend & DB** | [Lenguajes, DBs, servicios]       | [En progreso]  |
+| **Cloud/DevOps** | [Plataformas, herramientas]       | [En progreso]  |
+| **Otros**        | [Herramientas adicionales]        | [En progreso]  |
 
 ---
 
@@ -113,6 +118,7 @@ _[Contexto]_
 ## 🎓 EDUCACIÓN
 
 ### [Institución] | [Título/Certificación]
+
 - **Resumen:** [Qué aportó esta formación]
 
 ---

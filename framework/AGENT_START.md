@@ -16,17 +16,17 @@ El framework utiliza un flujo de **7 fases** que analiza la oferta laboral, calc
 
 ## Mapa de Documentos (Orden de Lectura)
 
-| Orden | Documento | Propósito | Cuándo Leer |
-|-------|-----------|-----------|-------------|
-| 1 | `framework/AGENT_START.md` | Entry point y orientación | **Siempre primero** |
-| 2 | `private/perfil_base.md` | Fuente de verdad del usuario | **Siempre** - base de todo contenido |
-| 3 | `private/brand_voice.md` | Guía de voz y estilo | **Siempre** - para validar coherencia |
-| 4 | `framework/framework_protocol.md` | Reglas operativas y 7 fases | **Siempre** - define el workflow |
-| 5 | `private/learnings.md` | Registro de aprendizajes | **Fase 7** - para registrar insights |
-| 6 | `framework/roadmap.md` | Visión de producto | Solo si se pregunta por futuro |
-| 7 | `private/outputs/` | CVs generados anteriormente | Para referencia de formato |
+| Orden | Documento                         | Propósito                    | Cuándo Leer                           |
+| ----- | --------------------------------- | ---------------------------- | ------------------------------------- |
+| 1     | `framework/AGENT_START.md`        | Entry point y orientación    | **Siempre primero**                   |
+| 2     | `../private/perfil_base.md`       | Fuente de verdad del usuario | **Siempre** - base de todo contenido  |
+| 3     | `../private/brand_voice.md`       | Guía de voz y estilo         | **Siempre** - para validar coherencia |
+| 4     | `framework/framework_protocol.md` | Reglas operativas y 7 fases  | **Siempre** - define el workflow      |
+| 5     | `../private/learnings.md`         | Registro de aprendizajes     | **Fase 7** - para registrar insights  |
+| 6     | `framework/roadmap.md`            | Visión de producto           | Solo si se pregunta por futuro        |
+| 7     | `../private/outputs/`             | CVs generados anteriormente  | Para referencia de formato            |
 
-> **Nota:** Los archivos en `private/` contienen información personal del usuario y no están en el repositorio público. Si no tienes acceso, solicita al usuario que te proporcione su contenido.
+> **Nota:** Los archivos en el directorio `private/` contienen información personal del usuario y no están en el repositorio público. Si no tienes acceso, solicita al usuario que te proporcione su contenido.
 
 ---
 
@@ -35,34 +35,38 @@ El framework utiliza un flujo de **7 fases** que analiza la oferta laboral, calc
 Antes de generar cualquier contenido, verifica que tienes:
 
 ### Datos Obligatorios
+
 - [ ] **Job Description (JD):** Texto completo de la oferta laboral
 - [ ] **Nombre de la empresa:** Para investigación de cultura
 - [ ] **Link de la oferta:** (Opcional pero recomendado)
 
 ### Contexto del Framework
-- [ ] Has leído `private/perfil_base.md` completo
-- [ ] Has leído `private/brand_voice.md` completo
+
+- [ ] Has leído `../private/perfil_base.md` completo
+- [ ] Has leído `../private/brand_voice.md` completo
 - [ ] Entiendes las 7 fases del workflow en `framework/framework_protocol.md`
 - [ ] Sabes que la Fase 7 (Retrospectiva) es **obligatoria** después de cada CV
 
 ### Si falta algo:
+
 1. **Si no hay JD:** Solicitar al usuario que proporcione el texto completo
 2. **Si no hay empresa:** Preguntar nombre para Culture Radar
-3. **Si hay dudas sobre el perfil:** Citar `private/perfil_base.md` y pedir clarificación
+3. **Si hay dudas sobre el perfil:** Citar `../private/perfil_base.md` y pedir clarificación
 
 ---
 
 ## Capacidades del LLM
 
-| Capacidad | Nivel | Notas |
-|-----------|-------|-------|
-| Context window 100k+ | **Recomendado** | Modelos modernos (2025) tienen 128k-1M tokens |
-| Output estructurado (Markdown) | **Requerido** | Formato estándar de salida |
-| Razonamiento multi-paso | **Requerido** | 7 fases requieren análisis secuencial |
-| Web Search | **Recomendado** | Si tienes esta capacidad, USARLA activamente |
-| Procesamiento de PDFs | **Recomendado** | Para recibir CVs existentes como contexto |
+| Capacidad                      | Nivel           | Notas                                         |
+| ------------------------------ | --------------- | --------------------------------------------- |
+| Context window 100k+           | **Recomendado** | Modelos modernos (2025) tienen 128k-1M tokens |
+| Output estructurado (Markdown) | **Requerido**   | Formato estándar de salida                    |
+| Razonamiento multi-paso        | **Requerido**   | 7 fases requieren análisis secuencial         |
+| Web Search                     | **Recomendado** | Si tienes esta capacidad, USARLA activamente  |
+| Procesamiento de PDFs          | **Recomendado** | Para recibir CVs existentes como contexto     |
 
 ### Recomendación de Uso
+
 - **1 oferta por sesión** para máxima calidad
 - Si quieres comparar varias ofertas: hacer screening rápido (solo Fases 1-2) primero
 
@@ -71,6 +75,7 @@ Antes de generar cualquier contenido, verifica que tienes:
 ## Uso de Capacidades
 
 ### Si SÍ tienes Web Search:
+
 ```
 OBLIGATORIO: Usar activamente en Fase 1 (Culture Radar)
 - Buscar: "[Empresa] engineering blog"
@@ -83,6 +88,7 @@ NO esperar a que el usuario te dé esta información si puedes buscarla.
 ```
 
 ### Si SÍ tienes capacidad Multimodal (PDFs):
+
 ```
 Puedes recibir CVs existentes del usuario como contexto adicional.
 Esto ayuda a entender mejor el estilo y formato que ya funciona.
@@ -93,6 +99,7 @@ Esto ayuda a entender mejor el estilo y formato que ya funciona.
 ## Fallbacks por Capacidad Limitada
 
 ### Si NO tienes Web Search:
+
 ```
 FASE 1 ALTERNATIVA: Solicitar al usuario
 - "Para completar el Culture Radar, necesito información sobre [Empresa].
@@ -103,6 +110,7 @@ FASE 1 ALTERNATIVA: Solicitar al usuario
 ```
 
 ### Si el context window es limitado (<32k):
+
 ```
 MODO COMPRIMIDO: Dividir en sesiones
 - Sesión 1: Fases 1-3 (Research + Score + Drafting)
@@ -110,6 +118,7 @@ MODO COMPRIMIDO: Dividir en sesiones
 ```
 
 ### Si el usuario no proporciona JD completa:
+
 ```
 SOLICITUD DE DATOS:
 "Para generar un CV optimizado necesito el texto completo de la oferta.
@@ -126,9 +135,10 @@ Por favor incluye:
 
 Una vez que hayas verificado el checklist de intake, responde:
 
-> "He procesado el framework. Tengo acceso a [private/perfil_base.md] y [private/brand_voice.md].
+> "He procesado el framework. Tengo acceso a [../private/perfil_base.md] y [../private/brand_voice.md].
 >
 > **¿Qué modo prefieres para [Nombre de Empresa]?**
+>
 > 1. **Screening Rápido** - Evaluación condensada para decidir si vale la pena (~5 min)
 > 2. **Proceso Completo** - Optimización full del CV (7 fases)"
 
@@ -138,22 +148,24 @@ Una vez que hayas verificado el checklist de intake, responde:
 
 ## Reglas Críticas (Zero Tolerance)
 
-1. **NUNCA inventar experiencias, tecnologías o logros** - Todo debe estar en `private/perfil_base.md`
-2. **NUNCA generar contenido sin validar coherencia de marca** - Usar `private/brand_voice.md`
+1. **NUNCA inventar experiencias, tecnologías o logros** - Todo debe estar en `../private/perfil_base.md`
+2. **NUNCA generar contenido sin validar coherencia de marca** - Usar `../private/brand_voice.md`
 3. **SIEMPRE calcular Confidence Score y SAS antes de generar contenido**
 4. **SIEMPRE documentar Gap Analysis** - Qué requisitos NO se cumplen
-5. **SIEMPRE ejecutar Fase 7 (Retrospectiva)** - Preguntar qué aprendimos y consolidar en `private/learnings.md`
+5. **SIEMPRE ejecutar Fase 7 (Retrospectiva)** - Preguntar qué aprendimos y consolidar en `../private/learnings.md`
 
 ---
 
 ## Estructura de Output Esperada
 
-Cada CV optimizado debe guardarse en `private/outputs/` con el formato:
+Cada CV optimizado debe guardarse en `../private/outputs/` con el formato:
+
 ```
 cv_[empresa]_[rol].md
 ```
 
 Y debe contener (en orden):
+
 1. Link de la oferta
 2. Confidence Score + justificación
 3. Strategic Alignment Score (SAS) + análisis

@@ -6,8 +6,8 @@ Este documento explica cómo usar el framework para optimizar tu CV hacia una of
 
 ## Fase 1: Preparación
 
-1. Asegúrate de que `perfil_base.md` esté actualizado con tu experiencia más reciente.
-2. Revisa `brand_voice.md` para entender tu voz de marca establecida.
+1. Asegúrate de que `../private/perfil_base.md` esté actualizado con tu experiencia más reciente.
+2. Revisa `../private/brand_voice.md` para entender tu voz de marca establecida.
 
 ---
 
@@ -18,7 +18,7 @@ Cuando encuentres una oferta de trabajo interesante:
 ### Opción A: Sesión Nueva con Cualquier LLM
 
 1. **Copia el contenido de `AGENT_START.md`** y pégalo en una nueva sesión de IA.
-2. **Adjunta `perfil_base.md`** y **`brand_voice.md`** para que el agente tenga contexto.
+2. **Adjunta `../private/perfil_base.md`** y **`../private/brand_voice.md`** para que el agente tenga contexto.
 3. **Proporciona la Job Description** que te interesa (texto completo + link si lo tienes).
 4. El agente ejecutará las 6 fases automáticamente.
 
@@ -49,13 +49,13 @@ El agente actuará como un **Estratega de Carrera** y generará:
 
 ## Archivos del Framework
 
-| Archivo | Cuándo Leer |
-|---------|-------------|
-| `AGENT_START.md` | Entry point para agentes nuevos |
-| `perfil_base.md` | Fuente de verdad - siempre actualizado |
-| `brand_voice.md` | Referencia de tono y estilo |
-| `framework_protocol.md` | Reglas detalladas del workflow |
-| `outputs/` | CVs generados anteriormente |
+| Archivo                     | Cuándo Leer                            |
+| --------------------------- | -------------------------------------- |
+| `AGENT_START.md`            | Entry point para agentes nuevos        |
+| `../private/perfil_base.md` | Fuente de verdad - siempre actualizado |
+| `../private/brand_voice.md` | Referencia de tono y estilo            |
+| `framework_protocol.md`     | Reglas detalladas del workflow         |
+| `../private/outputs/`       | CVs generados anteriormente            |
 
 ---
 
