@@ -8,7 +8,7 @@ Este documento define las fórmulas y criterios objetivos para calcular los scor
 
 | Score | Qué Mide | Pregunta Central |
 |-------|----------|------------------|
-| **Confidence Score** | Probabilidad técnica de ser contratado | "¿Cumplo con lo que piden?" |
+| **Confidence Score** | Fortaleza de la posición de partida | "¿Qué tan fuerte es mi caso?" |
 | **Strategic Alignment Score (SAS)** | Alineación con motivaciones y valores | "¿Esto me conviene a MÍ?" |
 
 ---
@@ -16,7 +16,7 @@ Este documento define las fórmulas y criterios objetivos para calcular los scor
 ## 1. CONFIDENCE SCORE (0-100%)
 
 ### Definición
-Probabilidad de que el usuario sea considerado un candidato viable basado en el match entre sus habilidades documentadas y los requisitos de la oferta.
+Qué tan fuerte es la posición de partida del candidato basado en el match entre sus habilidades documentadas y los requisitos de la oferta. No es una "probabilidad de contratación" — es una medida de qué tan sólido es el caso inicial.
 
 ### Fórmula
 
@@ -82,8 +82,8 @@ CONFIDENCE SCORE = (90 × 0.60) + (66.7 × 0.40) = 54 + 26.7 = 80.7%
 | **90-100%** | Match excepcional | Postular con alta prioridad |
 | **75-89%** | Match fuerte | Postular, gaps menores mitigables |
 | **60-74%** | Match moderado | Postular si SAS es alto, preparar mitigación de gaps |
-| **40-59%** | Match débil | Evaluar si vale la pena, gaps significativos |
-| **<40%** | No recomendado | Advertir al usuario antes de continuar |
+| **40-59%** | Match desafiante | Gaps significativos. Evaluar habilidades transferibles y valor estratégico |
+| **<40%** | Gap significativo | Evaluar valor estratégico con el usuario. Un score bajo no significa "no postular" |
 
 ---
 

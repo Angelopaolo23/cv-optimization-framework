@@ -16,15 +16,18 @@ El framework utiliza un flujo de **7 fases** que analiza la oferta laboral, calc
 
 ## Mapa de Documentos (Orden de Lectura)
 
-| Orden | Documento                         | Propósito                    | Cuándo Leer                           |
-| ----- | --------------------------------- | ---------------------------- | ------------------------------------- |
-| 1     | `framework/AGENT_START.md`        | Entry point y orientación    | **Siempre primero**                   |
-| 2     | `../private/perfil_base.md`       | Fuente de verdad del usuario | **Siempre** - base de todo contenido  |
-| 3     | `../private/brand_voice.md`       | Guía de voz y estilo         | **Siempre** - para validar coherencia |
-| 4     | `framework/framework_protocol.md` | Reglas operativas y 7 fases  | **Siempre** - define el workflow      |
-| 5     | `../private/learnings.md`         | Registro de aprendizajes     | **Fase 7** - para registrar insights  |
-| 6     | `framework/roadmap.md`            | Visión de producto           | Solo si se pregunta por futuro        |
-| 7     | `../private/outputs/`             | CVs generados anteriormente  | Para referencia de formato            |
+| Orden | Documento                         | Propósito                         | Cuándo Leer                           |
+| ----- | --------------------------------- | --------------------------------- | ------------------------------------- |
+| 1     | `framework/AGENT_START.md`        | Entry point y orientación         | **Siempre primero**                   |
+| 2     | `../private/perfil_base.md`       | Fuente de verdad del usuario      | **Siempre** - base de todo contenido  |
+| 3     | `../private/brand_voice.md`       | Guía de voz y estilo              | **Siempre** - para validar coherencia |
+| 4     | `framework/framework_protocol.md` | Reglas operativas y 7 fases       | **Siempre** - define el workflow      |
+| 5     | `framework/scoring_protocol.md`   | Fórmulas y rubricas de scoring    | **Fase 2** - cálculo de scores        |
+| 6     | `../private/learnings.md`         | Registro de aprendizajes          | **Fase 7** - para registrar insights  |
+| 7     | `../private/application_tracker.md` | Historial de postulaciones      | **Inicio** - contexto de aplicaciones |
+| 8     | `framework/onboarding/`           | Sistema de onboarding guiado      | **Modo Onboarding** - perfil nuevo    |
+| 9     | `framework/roadmap.md`            | Visión de producto                | Solo si se pregunta por futuro        |
+| 10    | `../private/outputs/INDEX.md`     | Índice de outputs generados       | Para referencia de historial          |
 
 > **Nota:** Los archivos en el directorio `private/` contienen información personal del usuario y no están en el repositorio público. Si no tienes acceso, solicita al usuario que te proporcione su contenido.
 
@@ -137,22 +140,24 @@ Una vez que hayas verificado el checklist de intake, responde:
 
 > "He procesado el framework. Tengo acceso a [../private/perfil_base.md] y [../private/brand_voice.md].
 >
-> **¿Qué modo prefieres para [Nombre de Empresa]?**
+> **¿Qué modo prefieres?**
 >
 > 1. **Screening Rápido** - Evaluación condensada para decidir si vale la pena (~5 min)
-> 2. **Proceso Completo** - Optimización full del CV (7 fases)"
+> 2. **Proceso Completo** - Optimización full del CV (7 fases)
+> 3. **Onboarding** - Primera configuración o actualización mayor del perfil base"
 
 **IMPORTANTE:** Siempre preguntar el modo antes de comenzar. No asumir.
 
 ---
 
-## Reglas Críticas (Zero Tolerance)
+## Reglas Críticas (Integridad + Advocacy)
 
-1. **NUNCA inventar experiencias, tecnologías o logros** - Todo debe estar en `../private/perfil_base.md`
-2. **NUNCA generar contenido sin validar coherencia de marca** - Usar `../private/brand_voice.md`
-3. **SIEMPRE calcular Confidence Score y SAS antes de generar contenido**
-4. **SIEMPRE documentar Gap Analysis** - Qué requisitos NO se cumplen
-5. **SIEMPRE ejecutar Fase 7 (Retrospectiva)** - Preguntar qué aprendimos y consolidar en `../private/learnings.md`
+1. **NUNCA inventar experiencias, tecnologías o logros** — SIEMPRE buscar el mejor encuadre de lo que SÍ existe en `../private/perfil_base.md`
+2. **NUNCA generar contenido sin validar coherencia de marca** — SIEMPRE consultar `../private/brand_voice.md`
+3. **SIEMPRE calcular Confidence Score y SAS antes de generar contenido** — usando `scoring_protocol.md`
+4. **SIEMPRE documentar Gap Analysis** — pero buscar activamente habilidades transferibles y contexto que mitigue gaps
+5. **SIEMPRE ejecutar Fase 7 (Retrospectiva)** — capturar learnings en `../private/learnings.md`
+6. **SIEMPRE actuar como abogado defensor** — los JDs son aspiracionales, el agente busca el mejor caso legítimo para el candidato
 
 ---
 
@@ -161,8 +166,10 @@ Una vez que hayas verificado el checklist de intake, responde:
 Cada CV optimizado debe guardarse en `../private/outputs/` con el formato:
 
 ```
-cv_[empresa]_[rol].md
+cv_[empresa]_[rol]_v[N].md
 ```
+
+**Regla:** Nunca sobreescribir un output existente. Si se genera una nueva versión, incrementar el número de versión. Los screenings no se versionan (son puntuales) pero incluyen fecha en el header.
 
 Y debe contener (en orden):
 
