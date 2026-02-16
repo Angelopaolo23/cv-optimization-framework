@@ -68,7 +68,7 @@ Este framework te ayuda a evaluar con honestidad dónde estás y construir el me
 | `../private/perfil_base.md` | Fuente de verdad del candidato | Siempre |
 | `../private/brand_voice.md` | Referencia de tono y estilo | Fases 3, 6 |
 | `../private/learnings.md` | Registro de aprendizajes | Fase 7 |
-| `../private/application_tracker.md` | Historial de postulaciones | Contexto |
+| `../private/application_tracker.json` | Historial de postulaciones | Contexto |
 | `../private/outputs/INDEX.md` | Índice de CVs generados | Referencia |
 | `onboarding/` | Sistema de onboarding para perfiles nuevos | Primera vez |
 | `common_patterns.md` | Patrones generalizados para la comunidad | Referencia |

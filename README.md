@@ -1,19 +1,27 @@
 # CV Optimization Framework
 
-Un framework de **Context Engineering** para optimizar CVs y perfiles profesionales mediante agentes de IA. Diseñado para acelerar postulaciones a trabajos técnicos manteniendo integridad y coherencia de marca personal.
+Un framework de **Context Engineering** para optimizar CVs y perfiles profesionales mediante agentes de IA. Diseñado para construir el caso más fuerte posible para un candidato — con integridad, coherencia de marca, y scoring estructurado.
+
+**Filosofía central:** El agente actúa como abogado defensor del candidato, no como auditor. Los JDs son listas aspiracionales — el framework encuentra el mejor encuadre legítimo de la experiencia real.
 
 ## Características
 
-- **Zero Hallucination Policy** - Todo contenido debe estar respaldado por experiencia documentada
+- **Candidate Advocacy** - El agente defiende activamente al candidato, busca transferibilidad, y combate el síndrome del impostor
+- **Scoring Integral** - Confidence Score (técnico, con clasificación A-D + MVP no-técnico) + SAS (alineación estratégica)
+- **Clasificación de Requisitos** - Tipo A (filtro duro), B (obligatorio), C (deseable real), D (inflado) — no todos los requisitos pesan igual
+- **Modificador de Valor Profesional** - Captura liderazgo, experiencia de negocio, y velocidad de aprendizaje que el JD no pregunta pero que importa
+- **3 Modos de Operación** - Screening Rápido, Proceso Completo (7 fases), Onboarding
 - **LLM-Agnóstico** - Funciona con Claude, GPT-4, Gemini, o cualquier modelo capaz
-- **Modo Screening** - Evaluación rápida de ofertas antes de invertir tiempo
-- **Modo Completo** - Optimización full con 7 fases de análisis
-- **Scoring Estructurado** - Confidence Score (técnico) + SAS (alineación estratégica)
-- **Feedback Loop** - Sistema de learnings para evolución continua
+- **Feedback Loop** - Learnings privados que escalan a patrones públicos reutilizables
 
 ## Flujo de Trabajo
 
 ```
+┌─────────────────┐
+│   Primera vez?  │──▶ Onboarding (poblar perfil_base.md)
+└────────┬────────┘
+         │ No (perfil existente)
+         ▼
 ┌─────────────────┐
 │   JD + Empresa  │
 └────────┬────────┘
@@ -32,50 +40,58 @@ Un framework de **Context Engineering** para optimizar CVs y perfiles profesiona
 └────────┬────────┘
          │
          ▼
-┌─────────────────┐
-│  CV Optimizado  │
-│  + Interview    │
-│    Intel        │
-└─────────────────┘
+┌─────────────────────────────┐
+│  CV Optimizado + Interview  │
+│  Intel + Brand Audit +      │
+│  Retrospectiva (Learnings)  │
+└─────────────────────────────┘
 ```
 
 ## Las 7 Fases
 
 1. **Research & Culture Radar** - Investigar empresa, pain points, stack
-2. **Alignment Score** - Calcular Confidence Score + SAS
-3. **Context Mapping & Drafting** - Generar Killer Summary, Impact Bullets
+2. **Alignment Score** - Clasificar requisitos (A-D), calcular Confidence + MVP + SAS
+3. **Context Mapping & Drafting** - Generar Killer Summary, Impact Bullets, Skills Matrix
 4. **Application Support** - Responder preguntas del portal (bajo demanda)
-5. **Verification & Review** - Validar integridad + preparar Interview Intel
-6. **Brand Coherence Audit** - Asegurar autenticidad de voz
-7. **Retrospectiva** - Capturar learnings para evolucionar
+5. **Verification & Review** - Validar integridad + Advocacy Checklist + Interview Intel
+6. **Brand Coherence Audit** - Asegurar autenticidad y coherencia de voz
+7. **Retrospectiva** - Capturar learnings y consolidar en documentos base
 
 ## Estructura del Repositorio
 
 ```
 /
-├── README.md                 # Este archivo
-├── framework/                # Lógica del sistema (público)
-│   ├── AGENT_START.md        # Entry point para agentes
-│   ├── framework_protocol.md # Reglas y fases del workflow
-│   ├── scoring_protocol.md   # Fórmulas de cálculo de scores
-│   ├── walkthrough.md        # Guía de uso
-│   └── roadmap.md            # Visión de producto
+├── README.md                       # Este archivo
+├── framework/                      # Lógica del sistema (público)
+│   ├── AGENT_START.md              # Entry point para agentes — leer primero
+│   ├── framework_protocol.md       # Reglas de operación y 7 fases del workflow
+│   ├── scoring_protocol.md         # Fórmulas: Confidence Score, MVP, SAS
+│   ├── walkthrough.md              # Guía de uso para el candidato
+│   ├── common_patterns.md          # Anti-patrones y patrones validados
+│   ├── roadmap.md                  # Visión de producto V1-V4
+│   └── onboarding/                 # Sistema de onboarding para nuevos usuarios
+│       ├── README.md               # Selección de modo
+│       ├── mode_a_guided.md        # Flujo guiado (5 fases de preguntas)
+│       └── mode_b_freeform.md      # Flujo libre (escucha reactiva)
 │
-├── templates/                # Plantillas para personalizar
-│   ├── perfil_base.template.md
-│   ├── brand_voice.template.md
-│   └── learnings.template.md
+├── templates/                      # Plantillas para personalizar (punto de partida)
+│   ├── perfil_base.template.md     # Con guía de uso y ejemplos concretos
+│   ├── brand_voice.template.md     # Con ejemplos de tono y killer summary
+│   └── learnings.template.md       # Estructura de feedback loop
 │
-└── private/                  # Tu información (en .gitignore)
-    ├── perfil_base.md
-    ├── brand_voice.md
-    ├── learnings.md
+└── private/                        # Tu información personal (en .gitignore)
+    ├── perfil_base.md              # Fuente de verdad (experiencia, skills, restricciones)
+    ├── brand_voice.md              # Voz y estilo documentados
+    ├── learnings.md                # Registro de aprendizajes por sesión
+    ├── application_tracker.json    # Historial de postulaciones
     └── outputs/
+        ├── INDEX.md                # Índice de todos los CVs generados
+        └── cv_*.md / screening_*.md
 ```
 
 ## Cómo Usar
 
-### 1. Configuración Inicial
+### Primera Vez (Onboarding)
 
 ```bash
 # Clona el repositorio
@@ -84,42 +100,60 @@ git clone [url]
 # Crea tu carpeta privada
 mkdir -p private/outputs
 
-# Copia las plantillas y personalízalas
+# Copia las plantillas
 cp templates/perfil_base.template.md private/perfil_base.md
 cp templates/brand_voice.template.md private/brand_voice.md
 cp templates/learnings.template.md private/learnings.md
-
-# Edita tus archivos personales
-# - private/perfil_base.md (tu experiencia, skills, restricciones)
-# - private/brand_voice.md (tu tono y estilo de comunicación)
 ```
 
-### 2. Ejecutar con un Agente
+Abre una sesión con tu LLM y di:
+> "Lee `framework/AGENT_START.md` y quiero hacer onboarding"
 
-Abre una sesión con tu LLM preferido (Claude, GPT-4, Gemini) y di:
+El agente guiará la configuración inicial de tu perfil.
 
-> "Lee el archivo `framework/AGENT_START.md` y luego te paso una oferta laboral"
+### Uso Regular
 
-El agente:
-1. Preguntará si quieres **Screening Rápido** o **Proceso Completo**
-2. Solicitará tus archivos de `private/` si no tiene acceso
-3. Ejecutará el flujo correspondiente
+Abre una sesión con tu LLM y di:
+> "Lee `framework/AGENT_START.md` — tengo una oferta para analizar"
 
-### 3. Iterar y Mejorar
+El agente preguntará: **Screening Rápido, Proceso Completo, u Onboarding**.
 
-Después de cada sesión, los learnings se capturan en `private/learnings.md` y pueden consolidarse en tus documentos base.
+### Iterar y Mejorar
+
+Después de cada sesión, los learnings se capturan en `private/learnings.md`. Los que se repiten escalan a `framework/common_patterns.md` para beneficiar a todos los usuarios.
 
 ## Scoring
 
 ### Confidence Score (0-100%)
-Probabilidad técnica de ser considerado candidato viable.
+
+Qué tan fuerte es el caso del candidato considerando match técnico + valor profesional integral.
 
 ```
-Confidence = (Obligatorios × 60%) + (Deseables × 40%)
+Confidence Final = min(Base Score + MVP, 100)
+
+Base Score = (Obligatorios [Tipo A+B] × 60%) + (Deseables [Tipo C+D] × 40%)
+
+Clasificación de requisitos:
+  Tipo A — Filtro Duro  (knockout real)              × 1.0
+  Tipo B — Obligatorio  (importante, negociable)     × 1.0
+  Tipo C — Deseable Real (diferenciador)             × 1.0
+  Tipo D — Deseable Inflado (wishlist irreal)        × 0.5
+
+Estados de match:
+  ✅ Cumple       (skill ≥ nivel 3 en Power Stack)  → 1.0
+  🔄 Transferible (equivalente con evidencia)        → 0.7
+  🟡 Parcial      (skill nivel 2, exposición)        → 0.5
+  ❌ No cumple                                       → 0.0
+
+MVP (Modificador de Valor Profesional): +0 a +15 pts
+  Liderazgo y Gestión          0-5 pts
+  Experiencia Industria/Negocio 0-5 pts
+  Velocidad de Aprendizaje     0-5 pts
 ```
 
-### Strategic Alignment Score - SAS (0-100%)
-Qué tanto te conviene esta oportunidad según tus metas y valores.
+### Strategic Alignment Score — SAS (0-100%)
+
+Qué tanto te conviene esta oportunidad según tus metas y valores documentados en `perfil_base.md`.
 
 5 dimensiones × 20 pts cada una:
 - Metas de Carrera
@@ -130,11 +164,11 @@ Qué tanto te conviene esta oportunidad según tus metas y valores.
 
 ## Roadmap
 
-- [x] V1: Core Architecture
-- [x] V1.1: Screening Mode + Scoring Protocol
-- [ ] V2: Interview Playbooks
-- [ ] V3: Auto-Discovery de ofertas
-- [ ] V4: SaaS con UI
+- [x] V1.0: Core Architecture — 7 fases, scoring básico, templates
+- [x] V1.5: Hardening — filosofía abogado defensor, scoring integral (A-D + MVP), onboarding, tracker, patrones
+- [ ] V2.0: Interview Playbooks + Multi-plataforma (LinkedIn, GitHub)
+- [ ] V3.0: Auto-Discovery de ofertas + adapters (LinkedIn Jobs, GetOnBoard)
+- [ ] V4.0: Career Companion — paths de aprendizaje, seguimiento de carrera
 
 ## Tecnologías Utilizadas
 

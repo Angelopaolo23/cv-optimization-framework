@@ -56,7 +56,7 @@ _Objetivo: Madurar el framework basado en la auditoría de los primeros 6 output
 - **Fase 4 — Templates enriquecidos:** Agregar ejemplos concretos a `perfil_base.template.md` y `brand_voice.template.md`
 - **Fase 5 — Versionado + INDEX:** Crear `private/outputs/INDEX.md` con tabla de todos los outputs
 - **Fase 6 — Learnings reales:** Poblar `private/learnings.md` con los 4 learnings de la auditoría (contradicción KPaz, métrica inventada Xepelin, fases nunca ejecutadas, scoring sin filtros duros)
-- **Fase 7 — Application Tracker:** Crear `private/application_tracker.md` (o `session-state.json`, ver nota abajo) con historial de las 6 postulaciones
+- **Fase 7 — Application Tracker:** Crear `private/application_tracker.json` con historial de las 6 postulaciones (implementado como JSON para estructura queryable)
 - **Fase 8 — Onboarding:** Crear `framework/onboarding/` con modo guiado (AI pregunta) y modo libre (usuario guía)
 - **Fase 9 — Patrones públicos:** Crear `framework/common_patterns.md` con anti-patrones y patrones generalizados para forkers
 - **Fase 10 — Este roadmap:** Actualizar visión (completado con este documento)
