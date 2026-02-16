@@ -12,3 +12,6 @@ private/
 
 # Claude Code local
 CLAUDE.md
+
+# Development session state
+SESSION-STATE.json

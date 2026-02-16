@@ -242,6 +242,14 @@ El perfil base (`perfil_base.md`) no es solo para CVs. Es la **single source of 
 - Markdown como capa de presentación bajo demanda
 - Esto aplica para: application tracker, adaptadores de plataforma, índice de outputs, y eventualmente el perfil base mismo
 
+### Punto a evaluar: formato de archivos según su especialidad
+- **Hipótesis:** Usar markdown para todo puede ser ineficiente en tokens. Cada archivo debería usar el formato más adecuado a su contenido — formatos LLM-friendly como JSON donde corresponda.
+- **Evaluación inicial:** Markdown es eficiente para instrucciones y prosa (formato nativo de LLMs). La ineficiencia está en usar markdown para datos tabulares que se parsean repetidamente. No es urgente migrar ahora — el impacto real en tokens es marginal hasta que el framework escale.
+- **Regla propuesta para futuras iteraciones:** cada archivo debería usar el formato que mejor se ajusta a su contenido — markdown para prosa/instrucciones, JSON para datos estructurados y configuración, YAML frontmatter para archivos mixtos (prosa + metadata).
+- **Candidatos a migración (cuando se evalúe):** application tracker → JSON, INDEX de outputs → JSON, Power Stack/Skills → YAML frontmatter en perfil_base, adaptadores de plataforma → JSON schemas
+- **No migrar:** framework_protocol, walkthrough, AGENT_START, brand_voice, learnings (son prosa, markdown es óptimo)
+- **Status:** A considerar en futuras iteraciones, no prioritario para V1.5
+
 ### Sobre el modelo de contribución comunitaria
 - Los adaptadores de plataforma (V2.1) son el contenido más probable que la gente quiera contribuir — valor inmediato y concreto
 - Los learnings generalizados (V1.5 Fase 9) son más difíciles de motivar pero más valiosos a largo plazo
