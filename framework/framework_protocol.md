@@ -108,21 +108,26 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 **Objetivo:** Validación objetiva antes de la ejecución.
 
-> **📊 Protocolo de cálculo:** Ver `scoring_protocol.md` para fórmulas detalladas y rubricas.
+> **📊 Protocolo de cálculo:** Ver `scoring_protocol.md` para fórmulas detalladas, rubricas y ejemplos.
 
-- **Confidence Score (0-100%):** Probabilidad de que el usuario sea contratado basado en su experiencia real vs requisitos obligatorios.
-  - Fórmula: `(Obligatorios × 0.60) + (Deseables × 0.40)`
+- **Confidence Score (0-100%):** Qué tan fuerte es el caso del candidato considerando match técnico + valor profesional integral.
+  - **Paso 1:** Clasificar requisitos del JD en Tipo A (filtro duro), B (obligatorio estándar), C (deseable real), D (deseable inflado)
+  - **Paso 2:** Evaluar match con 4 estados: ✅ Cumple (1.0), 🔄 Transferible (0.7), 🟡 Parcial (0.5), ❌ No cumple (0.0)
+  - **Paso 3:** Calcular base: `(Obligatorios [A+B] × 0.60) + (Deseables [C+D] × 0.40)`
+  - **Paso 4:** Aplicar MVP (Modificador de Valor Profesional): +0 a +15 puntos por liderazgo, experiencia de negocio, velocidad de aprendizaje
+  - Fórmula final: `min(Base + MVP, 100)`
 - **Strategic Alignment Score (SAS) (0-100%):** Qué tanto se alinea la oferta con las metas de carrera del usuario.
-  - 5 dimensiones: Metas, Motivaciones, Cultura, Crecimiento, Autonomía (20 pts c/u)
+  - 5 dimensiones genéricas evaluadas contra `../private/perfil_base.md`: Metas, Motivaciones, Cultura, Crecimiento, Autonomía (20 pts c/u)
 - **Gap Analysis:** Listado explícito de lo que falta y la estrategia para mitigarlo:
+  - "Habilidad transferible — argumentar equivalencia" (usar estado 🔄)
   - "Mencionar en aprendizaje activo"
-  - "Resaltar habilidad transferible"
-  - "Omitir - no hay forma de mitigar"
+  - "Omitir — no hay forma de mitigar"
 
 - **Sugerencias de Mitigación (Opcional):**
   Si el agente detecta gaps que podrían presentarse mejor, puede sugerir:
   - Formas de "enmarcar" la experiencia sin mentir (ej: "experiencia con X a través de proyectos personales")
   - Énfasis en capacidad de aprendizaje rápido + uso de IA como multiplicador
+  - Fortalezas no-técnicas que compensan gaps técnicos (capturadas por el MVP)
   - **IMPORTANTE:** Toda sugerencia de mitigación debe ser discutida y aprobada por el usuario antes de incluirse.
 
 - **Learning Path (Opcional):**
@@ -134,7 +139,7 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 **Reglas:**
 - Si Confidence Score < 50%, informar honestamente al usuario y acompañar la decisión. Un score bajo no significa "no postular" — puede haber valor estratégico.
 - Si SAS < 50%, informar que la alineación estratégica es baja. El usuario decide; el agente provee contexto, no juicio.
-- **Importante:** Los gaps percibidos no siempre son gaps reales. Antes de reportar un gap, verificar si hay habilidades transferibles que el usuario podría estar subestimando.
+- **Importante:** Los gaps percibidos no siempre son gaps reales. Antes de reportar un gap, verificar si hay habilidades transferibles (estado 🔄) que el usuario podría estar subestimando. Evaluar también el MVP — un candidato con score base bajo pero MVP alto tiene un caso más fuerte de lo que parece.
 
 ### Fase 3: Context Mapping & Drafting
 
