@@ -24,7 +24,7 @@ El framework utiliza un flujo de **7 fases** que analiza la oferta laboral, calc
 | 4     | `framework/framework_protocol.md` | Reglas operativas y 7 fases       | **Siempre** - define el workflow      |
 | 5     | `framework/scoring_protocol.md`   | Fórmulas y rubricas de scoring    | **Fase 2** - cálculo de scores        |
 | 6     | `../private/learnings.md`         | Registro de aprendizajes          | **Fase 7** - para registrar insights  |
-| 7     | `../private/application_tracker.md` | Historial de postulaciones      | **Inicio** - contexto de aplicaciones |
+| 7     | `../private/application_tracker.json` | Historial de postulaciones      | **Inicio** - contexto de aplicaciones anteriores |
 | 8     | `framework/onboarding/`           | Sistema de onboarding guiado      | **Modo Onboarding** - perfil nuevo    |
 | 9     | `framework/roadmap.md`            | Visión de producto                | Solo si se pregunta por futuro        |
 | 10    | `../private/outputs/INDEX.md`     | Índice de outputs generados       | Para referencia de historial          |
