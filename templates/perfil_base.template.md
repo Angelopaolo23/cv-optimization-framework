@@ -2,6 +2,37 @@
 
 Este documento sirve como la fuente de verdad única para la generación de contenido de CV, evitando alucinaciones y asegurando que cada dato esté respaldado por la experiencia real del usuario.
 
+---
+
+## 📋 CÓMO USAR ESTE TEMPLATE
+
+**Propósito:** Este archivo es lo que el agente de IA lee para construir tu CV. Cuanto más completo y específico, mejores serán los resultados.
+
+**Reglas básicas:**
+
+1. **Sé específico con métricas reales.** "Reduje tiempos en 30%" > "Mejoré procesos". Solo escribe números que puedas verificar.
+2. **Completa la sección NON-NEGOTIABLES primero.** Define qué nunca debes afirmar — esto protege tu integridad.
+3. **El Power Stack es la fuente técnica.** Si una tecnología no está aquí, el agente no puede usarla en el CV.
+4. **No infles el nivel de skills.** Usa la escala honestamente: 5=experto, 3=independiente, 2=con ayuda.
+5. **Fortalezas Profesionales es crítico para el MVP.** Si tienes liderazgo, experiencia de negocio o transiciones de carrera, documéntalo aquí — influye directamente en tu score.
+
+**Qué es obligatorio vs. opcional:**
+
+| Sección | Obligatoria | Notas |
+|---------|-------------|-------|
+| PERFIL PROFESIONAL | ✅ | Mínimo: Pilar, Identidad, Diferenciador |
+| NON-NEGOTIABLES | ✅ | Al menos las restricciones de métricas |
+| POWER STACK | ✅ | Sin esto el scoring técnico no funciona |
+| TRAYECTORIA PROFESIONAL | ✅ | Mínimo 1 experiencia con logros |
+| VALUE HIERARCHY | Recomendada | Ayuda al SAS |
+| FORTALEZAS PROFESIONALES | Recomendada | Necesaria para el MVP |
+| EDUCACIÓN / CERTIFICACIONES | Opcional | Si es relevante para los roles |
+| KILLER SUMMARY | Opcional | El agente puede generarlo si no existe |
+
+> **Primera vez:** Si es tu primera sesión, usa el modo **Onboarding** (`framework/onboarding/`). El agente te guiará para poblar este archivo sección por sección.
+
+---
+
 > **📌 Estado de canales:** [Indica si tu LinkedIn ya está optimizado o no]
 
 ## 👤 PERFIL PROFESIONAL (ETHOS)
@@ -38,6 +69,13 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 4. **[Valor 4]** - [Descripción]
 5. **[Valor 5]** - [Descripción]
 
+> **Ejemplo:**
+> 1. **Integridad técnica** - Solo afirmar lo que puedo demostrar. Nunca inflar.
+> 2. **Impacto sobre tareas** - Cada logro debe conectar con un resultado real.
+> 3. **Crecimiento continuo** - Posicionar el aprendizaje como fortaleza, no excusa.
+> 4. **Autonomía** - Priorizar roles que permitan decidir, no solo ejecutar.
+> 5. **Equilibrio** - No sacrificar bienestar por compensación.
+
 ---
 
 ## 🚫 NON-NEGOTIABLES (Restricciones Absolutas)
@@ -64,6 +102,13 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 - ❌ Superlativos vacíos ("el mejor", "excepcional", "world-class")
 - ❌ Lenguaje desesperado o servil
 
+> **Ejemplos concretos de NON-NEGOTIABLES:**
+> - ❌ Afirmar experiencia en producción con tecnologías que están en "En Aprendizaje"
+> - ❌ Inventar métricas: solo usar números de la sección TRAYECTORIA (ej: si el logro real fue "tiempo de respuesta mejoró" sin número, no inventar "30%")
+> - ❌ Presentar proyectos personales como experiencia laboral formal
+> - ❌ Afirmar liderazgo de equipo si solo hubo coordinación informal
+> - ❌ Skills en "nivel 2" (en aprendizaje) presentados como "nivel 4" (producción)
+
 ---
 
 ## 🔝 UNIVERSAL KILLER SUMMARY (Para LinkedIn / About)
@@ -74,6 +119,8 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 
 ## 🛠️ THE POWER STACK (Habilidades Duras)
 
+Usa la escala: **5** = experto/diario, **4** = producción frecuente, **3** = independiente, **2** = con ayuda/en aprendizaje, **1** = conocimiento teórico.
+
 | Categoría        | Tecnologías (Dominio Actual)      | En Aprendizaje |
 | :--------------- | :-------------------------------- | :------------- |
 | **Lenguajes**    | [Listar con nivel de experiencia] | [En progreso]  |
@@ -81,6 +128,16 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 | **Backend & DB** | [Lenguajes, DBs, servicios]       | [En progreso]  |
 | **Cloud/DevOps** | [Plataformas, herramientas]       | [En progreso]  |
 | **Otros**        | [Herramientas adicionales]        | [En progreso]  |
+
+> **Ejemplo relleno:**
+>
+> | Categoría | Tecnologías (Dominio Actual) | En Aprendizaje |
+> | :-------- | :--------------------------- | :------------- |
+> | **Lenguajes** | Python (4), JavaScript/TypeScript (4), SQL (3) | Rust |
+> | **Frontend** | React (4), Next.js (3), TailwindCSS (4) | Vue.js |
+> | **Backend & DB** | Node.js/Express (4), PostgreSQL (4), Redis (3), FastAPI (3) | Django, NestJS |
+> | **Cloud/DevOps** | Azure (3), Docker (3), GitHub Actions (3) | Kubernetes, AZ-400 |
+> | **IA/Agentes** | OpenAI API (3), LangChain (2), Prompt Engineering (4) | RAG, Fine-tuning |
 
 ---
 
@@ -99,6 +156,8 @@ _[Breve descripción del contexto del proyecto]_
 
 ## 💼 TRAYECTORIA PROFESIONAL
 
+Usa la estructura: **[Acción] + [Contexto/Complejidad] + [Resultado cuantificable si existe]**
+
 ### [Título del Puesto] - [Empresa] | [Fecha Inicio] - [Fecha Fin]
 
 _[Breve contexto del rol]_
@@ -107,11 +166,48 @@ _[Breve contexto del rol]_
 - **Logro 2:** [Descripción con impacto]
 - **Logro 3:** [Descripción con impacto]
 
+> **Ejemplos de Impact Bullets bien escritos:**
+> - ✅ "Diseñé e implementé pipeline de automatización con Python y Azure Functions que redujo el tiempo de procesamiento de reportes de 4 horas a 12 minutos, eliminando trabajo manual del equipo de 8 personas."
+> - ✅ "Lideré migración de sistema legacy a arquitectura de microservicios en React + Node.js para plataforma con 50k usuarios activos, reduciendo incidencias críticas en un 60%."
+> - ✅ "Desarrollé sistema de alertas en tiempo real integrado con Slack que permitió al equipo de operaciones detectar anomalías 3 horas antes que el sistema anterior."
+>
+> **Anti-ejemplos:**
+> - ❌ "Trabajé en el equipo de backend." (sin acción, sin impacto)
+> - ❌ "Mejoré el rendimiento del sistema en un 200%." (métrica sin respaldo)
+> - ❌ "Colaboré en proyectos de desarrollo." (genérico)
+
 ### [Puesto Anterior] - [Empresa] | [Fecha Inicio] - [Fecha Fin]
 
 _[Contexto]_
 
 - **Logro 1:** [Descripción]
+
+---
+
+## 💡 FORTALEZAS PROFESIONALES (Fuente del MVP)
+
+Esta sección alimenta el **Modificador de Valor Profesional (MVP)** del scoring. Documenta fortalezas que van más allá de las habilidades técnicas. Si no está documentado aquí, el agente no puede argumentarlo.
+
+### Liderazgo y Gestión
+
+_¿Has liderado equipos, coordinado proyectos, o gestionado stakeholders? Documenta con contexto concreto._
+
+- [Ejemplo: "Lideré equipo de 5 personas en proyecto de implementación de ERP — 8 meses, presupuesto $X, entregado a tiempo"]
+- [Ejemplo: "Coordiné stakeholders de 3 áreas (IT, Finanzas, Operaciones) en migraciones de sistema"]
+
+### Experiencia de Industria/Negocio
+
+_¿Formación en negocios? ¿Roles con visión comercial? ¿Industrias específicas?_
+
+- [Ejemplo: "Título en Ingeniería Comercial — Finanzas Internacionales. Visión de P&L, contratos, análisis de mercado"]
+- [Ejemplo: "3 años en sector energético regulado (CGE) — conocimiento de NERC, procesos de licitación, relaciones con reguladores"]
+
+### Velocidad de Aprendizaje Demostrada
+
+_¿Transiciones de carrera? ¿Stacks nuevos adoptados rápido? ¿Certificaciones con fecha?_
+
+- [Ejemplo: "Transición de roles de negocio a desarrollo Full Stack en 14 meses — sin bootcamp previo, autoguiado"]
+- [Ejemplo: "Aprendí React, Node.js, PostgreSQL, y Azure en paralelo mientras trabajaba full-time en rol no técnico"]
 
 ---
 

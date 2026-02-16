@@ -24,6 +24,15 @@ Este documento define las especificaciones de comunicación para mantener cohere
 | **Humano** | [Nivel de calidez] | [Ejemplo bueno] | [Ejemplo malo] |
 | **Directo** | [Nivel de concisión] | [Ejemplo bueno] | [Ejemplo malo] |
 
+> **Ejemplo de tabla rellena:**
+>
+> | Dimensión | Especificación | Ejemplo ✅ | Anti-ejemplo ❌ |
+> |-----------|----------------|-----------|-----------------|
+> | **Confianza** | Seguro sin arrogancia — afirmo lo que sé, reconozco lo que aprendo | "Implementé arquitectura de microservicios que redujo latencia en 40%" | "Soy experto en todo tipo de sistemas distribuidos" |
+> | **Técnico** | Nombra tecnologías específicas, no categorías genéricas | "Automaticé con Python + Azure Functions + GitHub Actions" | "Utilicé herramientas de automatización en la nube" |
+> | **Humano** | Conecta el código con el impacto en personas | "...liberando 6 horas semanales del equipo de 8 personas" | "...mejorando la eficiencia operacional del proceso" |
+> | **Directo** | Primera frase ya dice el resultado; contexto después | "Rediseñé el pipeline de datos que eliminó los cortes de lunes." | "Trabajé en un proyecto interesante de mejora de datos que tuvo buenos resultados" |
+
 ### Escala de Formalidad
 
 ```
@@ -146,15 +155,24 @@ Antes de finalizar cualquier output, verificar:
 ### Killer Summary:
 > "[Ejemplo de tu killer summary ideal]"
 
+> **Ejemplo de referencia (perfil técnico-negocio):**
+> "Full Stack Developer con formación en negocios internacionales y 4 años construyendo sistemas que conectan operaciones complejas con resultados medibles. Combino arquitectura de software con visión de proceso para entregar productos que escalan — no solo código que funciona. Uso IA generativa como multiplicador: lo que otros hacen en semanas, lo construyo en días."
+
 ### Impact Bullet (Técnico):
 > "[Ejemplo de bullet técnico con tu voz]"
+
+> **Ejemplo:** "Desarrollé API REST con Node.js + TypeScript + PostgreSQL para sistema de gestión de activos críticos en empresa eléctrica, procesando 10k transacciones diarias con 99.9% de uptime en los primeros 6 meses de producción."
 
 ### Impact Bullet (Negocio/Impacto):
 > "[Ejemplo de bullet orientado a impacto con tu voz]"
 
+> **Ejemplo:** "Automaticé proceso de consolidación de reportes financieros con Python + Azure Functions, reduciendo tiempo de cierre mensual de 3 días a 4 horas y eliminando 100% de los errores manuales de transcripción que causaban retrabajos."
+
 ---
 
 ## 📄 Patrones de CVs Validados (Opcional)
+
+> **Primera optimización:** Si aún no tienes CVs generados con el framework, deja esta sección vacía. Después de tu primera sesión completa (7 fases), el agente te sugerirá patrones a documentar aquí basados en lo que funcionó. Los mejores patrones emergen de la práctica, no de la teoría.
 
 Si ya tienes CVs que funcionaron bien, documenta aquí los patrones:
 
