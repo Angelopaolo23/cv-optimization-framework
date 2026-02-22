@@ -141,16 +141,54 @@ Usa la escala: **5** = experto/diario, **4** = producción frecuente, **3** = in
 
 ---
 
-## 🚀 PROYECTO DESTACADO: [Nombre del Proyecto] | [Fecha Inicio] - [Presente/Fecha Fin]
+## 🚀 PROYECTOS PERSONALES
 
-_[Breve descripción del contexto del proyecto]_
+### Clasificación de Proyectos (3 Tiers)
 
-- **Problema:** [Qué problema resolvió]
+Antes de documentar un proyecto, clasifícalo. El tier determina cómo el agente lo usará en el CV:
+
+| Tier | Nombre | Criterios | Uso en CV |
+|------|--------|-----------|-----------|
+| **1** | Producción | Tiene usuarios reales (aunque sean pocos) + resuelve problema documentable + stack de producción (no solo localhost) + lleva tiempo en funcionamiento | Puede ir en sección **Trayectoria** junto a experiencia laboral |
+| **2** | Portafolio | Demuestra capability técnica clara + arquitectura interesante + stack relevante para el mercado, aunque sin usuarios reales | Va en sección **Proyectos** con framing de qué demuestra |
+| **3** | Aprendizaje | Tutorial, práctica de tecnología, ejercicio de bootcamp | Solo incluir si es directamente relevante al rol específico que se postula |
+
+> **Preguntas para clasificar un proyecto:**
+> 1. ¿Alguien más lo usa además de ti? → Si sí, apunta a Tier 1
+> 2. ¿Resuelve un problema real que alguien pagaría o necesita? → Si sí, apunta a Tier 1-2
+> 3. ¿Está en producción (URL pública, dominio, app store)? → Si sí, Tier 1
+> 4. ¿Demuestra decisiones de arquitectura o stack relevante? → Si sí, Tier 2 mínimo
+> 5. ¿Es un tutorial o ejercicio de práctica? → Tier 3
+
+---
+
+### [Tier 1/2] [Nombre del Proyecto] | [Fecha Inicio] - [Presente/Fecha Fin]
+
+**Tier:** [1 — Producción / 2 — Portafolio / 3 — Aprendizaje]
+
+_[Breve descripción del contexto y problema que resuelve]_
+
+- **Problema resuelto:** [Qué problema real aborda]
+- **Usuarios/Impacto:** [Quién lo usa, cuántos, qué cambió para ellos — o N/A si Tier 2]
+- **Stack:** [Tecnologías principales con nivel]
 - **Logros Técnicos:**
-  - **[Área 1]:** [Descripción con tecnologías específicas]
+  - **[Área 1]:** [Descripción con decisiones de arquitectura]
   - **[Área 2]:** [Descripción con tecnologías específicas]
-  - **[Área 3]:** [Descripción con tecnologías específicas]
-- **Resultado/Impacto:** [Métricas o resultados concretos si los hay]
+- **Qué demuestra:** [Qué capacidad evidencia para un empleador]
+- **Link:** [GitHub / URL en producción / N/A]
+
+> **Ejemplo Tier 1 (Producción):**
+> **Marketplace Artístico** | Ene 2025 - Presente
+> **Tier:** 1 — Producción
+> Plataforma B2C para artistas independientes que conecta creadores con compradores sin intermediarios.
+> - **Problema resuelto:** Artistas sin canal propio de venta digital en Latam
+> - **Usuarios/Impacto:** 12 artistas activos, 40+ compradores registrados
+> - **Stack:** Next.js (4), FastAPI (3), PostgreSQL (4), Stripe, Cloudinary
+> - **Logros Técnicos:**
+>   - **Auth & pagos:** Sistema de autenticación propio + integración Stripe con webhooks para pagos seguros
+>   - **Arquitectura:** Separación frontend/backend desacoplada con API REST documentada
+> - **Qué demuestra:** Capacidad de llevar un producto a producción de forma autónoma, decisiones de arquitectura, integración de pagos
+> - **Link:** github.com/usuario/marketplace
 
 ---
 

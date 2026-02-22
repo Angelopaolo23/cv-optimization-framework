@@ -68,9 +68,39 @@ Resumir lo capturado y confirmar: "Entonces tu identidad profesional es [X], te 
 6. **"¿Has hecho una transición de carrera o aprendido algo nuevo en poco tiempo? ¿Cambiaste de área, aprendiste un stack nuevo, sacaste certificaciones?"**
    - Buscamos: Velocidad de Aprendizaje (MVP categoría 3)
 
+### Preguntas de Evaluación de Proyectos Personales
+
+Si el usuario menciona proyectos personales (o si la trayectoria laboral es corta), hacer estas preguntas para clasificar cada proyecto en el tier correcto:
+
+7. **"¿Tienes proyectos personales o side projects? Cuéntame sobre ellos."**
+   - Si menciona proyectos, para cada uno preguntar:
+
+   a. **"¿Alguien más lo usa además de ti?"**
+      - Si sí → señal de Tier 1 (Producción). Continuar con preguntas b y c.
+      - Si no → puede ser Tier 2 o 3. Continuar igualmente.
+
+   b. **"¿Qué problema resuelve? ¿Es algo que alguien necesita o pagaría?"**
+      - Si resuelve problema real → Tier 1 o 2.
+      - Si es práctica/tutorial → Tier 3. Anotar y no profundizar más.
+
+   c. **"¿Está en producción? ¿Tiene URL, dominio, o está publicado en algún lado?"**
+      - Si sí → confirmar Tier 1.
+      - Si no pero tiene arquitectura interesante → Tier 2.
+
+   d. **"¿Qué stack usaste y qué decisiones de arquitectura tomaste?"**
+      - Buscamos: evidencia técnica para el framing de Tier 2, o datos de producción para Tier 1.
+
+   **Al clasificar, informar al usuario:** "Este proyecto es Tier [1/2/3] — [explicación breve de qué significa para el CV]."
+
+   > **Ejemplo de clasificación en conversación:**
+   > Usuario: "Tengo un marketplace que armé para practicar Next.js y tiene algunos usuarios reales."
+   > Agente: "¿Cuántos usuarios? ¿Están registrados o solo visitan? ¿Hacen transacciones reales?"
+   > → Si tiene usuarios con transacciones reales → Tier 1, puede ir en Trayectoria.
+   > → Si solo visitas sin acción real → Tier 2, va en Proyectos con framing técnico.
+
 ### Al Cerrar Esta Fase
 
-"Identifiqué [N] experiencias con [M] logros documentados. Tus fortalezas profesionales principales parecen ser [X, Y, Z]. ¿Falta algo importante?"
+"Identifiqué [N] experiencias con [M] logros documentados. [Si hay proyectos:] Tus proyectos personales son: [Tier 1: X → irá en Trayectoria / Tier 2: Y → irá en Proyectos]. Tus fortalezas profesionales principales parecen ser [X, Y, Z]. ¿Falta algo importante?"
 
 ---
 
