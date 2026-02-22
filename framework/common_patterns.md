@@ -156,3 +156,49 @@ Este documento captura patrones observados en múltiples sesiones de optimizaci�
 - Clasificar más requisitos como Tipo C o D (wishlist extensa es señal de startup)
 - El patrón "aprendo rápido" es más valioso que el match técnico exacto
 - Cultura y autonomía (SAS Dimensiones 3 y 5) son cruciales — un 0 en cultura es deal-breaker
+
+---
+
+## 🤝 Cómo Contribuir un Patrón
+
+Si usas este framework y descubriste un patrón o anti-patrón que no está aquí, puedes contribuirlo para que otros usuarios se beneficien.
+
+### Criterios para contribuir
+
+Un patrón vale la pena compartir si cumple los 3:
+
+1. **Repetible:** Lo observaste 2+ veces en sesiones distintas (no es un caso único)
+2. **Generalizable:** Aplica a cualquier candidato, independientemente de stack, rol, o industria
+3. **Accionable:** Tiene una solución concreta documentada, no solo la descripción del problema
+
+### Plantilla de anonimización
+
+Antes de contribuir, anonimiza el learning eliminando datos personales:
+
+```markdown
+### [❌ Anti-Patrón / ✅ Patrón] N: [Nombre descriptivo]
+
+**Qué pasa:** [Descripción del patrón en términos genéricos — sin empresa, nombre, ni métricas reales]
+
+**Por qué es un problema / Por qué funciona:** [Explicación del impacto]
+
+**Señales de que está pasando:** [Cómo detectarlo]
+- [Señal 1]
+- [Señal 2]
+
+**Solución:** [Qué hacer en cambio]
+```
+
+**Qué reemplazar al anonimizar:**
+- Nombre de empresa → "una empresa de [industria]" o "un empleador"
+- Rol específico → "el candidato" o "un desarrollador"
+- Métricas reales → "una mejora significativa" o eliminar
+- Tecnologías muy nicho → la categoría general si el patrón aplica igual
+
+### Cómo enviarlo
+
+Opción A — **GitHub Issue:** Abre un issue en el repositorio con el título `[Patrón] Nombre del patrón` y pega el texto anonimizado.
+
+Opción B — **Pull Request:** Agrega directamente el patrón al final de la sección correspondiente (Anti-Patrones o Patrones) en este archivo y abre un PR.
+
+> **Nota:** La contribución de patrones es la forma más valiosa de hacer crecer este framework. Cada aprendizaje compartido mejora los CVs de todos los usuarios futuros.

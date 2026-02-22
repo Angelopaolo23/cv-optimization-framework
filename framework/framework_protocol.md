@@ -223,6 +223,24 @@ Este documento define las reglas de operación, lógica de análisis y estándar
 
 **Output:** Actualización de `../private/learnings.md` + consolidación directa en documentos base si aplica.
 
+**Evaluación de Generalización (paso obligatorio al cerrar Fase 7):**
+
+Después de registrar los learnings de la sesión, el agente debe hacer esta pregunta:
+
+> "De los learnings que capturamos hoy, ¿alguno podría aplicar a cualquier candidato — independientemente de su perfil, industria, o rol? Si sí, ¿lo anonimizamos para agregarlo a `common_patterns.md`?"
+
+**Criterios para promover a `common_patterns.md`:**
+- El patrón o anti-patrón se repite 2+ veces entre sesiones distintas
+- Es generalizable: aplica sin importar el stack, rol, o experiencia del usuario
+- Tiene una solución documentada (no solo el problema)
+
+**Cómo anonimizar un learning personal:**
+1. Reemplazar empresa, rol, y métricas específicas por placeholders genéricos
+2. Mantener la estructura del patrón y la solución
+3. Agregar a la sección correspondiente en `framework/common_patterns.md` (Anti-Patrón o Patrón)
+
+Si el learning no es generalizable, registrarlo solo en `../private/learnings.md` como siempre.
+
 ---
 
 ## 📊 ESCALA DE SKILL MATRIX (Referencia)
