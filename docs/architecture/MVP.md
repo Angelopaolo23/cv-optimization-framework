@@ -105,12 +105,19 @@ Los portales de empleo tienen **tres capas de campos:**
 ```
 1. Agente genera CV content (como siempre)
 2. Agente pregunta: "¿En qué plataforma vas a postular?"
-   → Si la conocemos: "GetOnBoard te va a pedir [X, Y, Z]. Te los preparo."
-   → Si no: "¿Te pide algo adicional?"
-3. Agente genera respuestas para campos de plataforma (Capa 2)
+   → Si la conocemos: "GetOnBoard generalmente pide estas preguntas:
+      1. Pretensión de renta
+      2. Disponibilidad remoto
+      3. ¿Por qué te interesa este rol?
+      ¿Te aparecen estas mismas, o hay alguna diferente?
+      Te preparo las respuestas con lo que me confirmes."
+   → Si no la conocemos: "¿Qué campos o preguntas te pide?"
+3. Usuario confirma o corrige → agente genera respuestas para lo confirmado
 4. Usuario pega preguntas específicas del empleador (Capa 3)
 5. Agente genera respuestas COHERENTES con el CV ya generado
 ```
+
+**Principio: confirmar antes de generar.** No asumimos que los campos de la plataforma no han cambiado. El costo de una pregunta de confirmación es mínimo; el costo de generar respuestas para campos incorrectos es confusión + tokens desperdiciados. Además, si el usuario corrige, actualizamos el schema.
 
 **Por qué esto es poderoso:** Las respuestas al portal son coherentes con el CV. Si el Killer Summary dice "Full Stack con background en negocios", la respuesta a "¿Por qué te interesa este rol?" refuerza ese ángulo. Hoy la gente escribe CV y respuestas del portal por separado — sin coherencia.
 

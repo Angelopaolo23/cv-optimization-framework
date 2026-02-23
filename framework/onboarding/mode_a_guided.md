@@ -161,9 +161,9 @@ Mostrar la tabla armada y confirmar niveles. "¿Alguno te parece muy alto o muy 
 
 ---
 
-## Fase 5: Prioridades y Límites (5 min)
+## Fase 5: Prioridades, Preferencias y Límites (5-8 min)
 
-**Objetivo:** Poblar VALUE HIERARCHY y NON-NEGOTIABLES
+**Objetivo:** Poblar VALUE HIERARCHY, PREFERENCIAS LABORALES y NON-NEGOTIABLES
 
 ### Preguntas Obligatorias
 
@@ -178,9 +178,29 @@ Mostrar la tabla armada y confirmar niveles. "¿Alguno te parece muy alto o muy 
    - Buscamos: Non-Negotiables de experiencia
    - Ejemplo: "¿Skills en progreso que no quieres que se presenten como dominados?"
 
+### Preguntas de Preferencias Laborales
+
+Estas respuestas se reutilizan en cada postulación (autocompletar plataformas, filtrar ofertas, alimentar SAS).
+
+4. **"¿Cómo prefieres trabajar: remoto, híbrido, o presencial? ¿Alguno es deal-breaker?"**
+   - Buscamos: Modalidad preferida + si es negociable o absoluto
+   - Si dice "remoto" sin más: "¿Aceptarías híbrido si la oferta es muy buena? ¿O es innegociable?"
+
+5. **"¿Tienes alguna restricción geográfica? ¿Estás dispuesto a reubicarte?"**
+   - Buscamos: Ubicación actual, disposición a cambiar, zonas horarias aceptables
+   - Para remoto: "¿Te importa la zona horaria del equipo? ¿Trabajarías con equipos en horario europeo o asiático?"
+
+6. **"¿Tienes un rango de pretensión salarial? No tiene que ser exacto — un mínimo y un ideal."**
+   - Buscamos: Rango salarial (mínimo aceptable + ideal)
+   - Aclarar: "Esto es solo para que yo pueda filtrar ofertas y autocompletar cuando las plataformas lo pidan. Nunca aparece en tu CV."
+   - Si no quiere responder: está bien, se deja en blanco y se pregunta en cada postulación
+
+7. **"¿Tipo de contrato que buscas: indefinido, plazo fijo, freelance, contractor? ¿Más de uno está bien?"**
+   - Buscamos: Tipos de contrato aceptables
+
 ### Al Cerrar Esta Fase
 
-"Tus prioridades son [1, 2, 3, 4, 5] y tus límites absolutos son [X, Y, Z]. ¿Correcto?"
+"Tus prioridades son [1, 2, 3, 4, 5], prefieres trabajo [modalidad] en [ubicación/zona horaria], rango salarial [X-Y], y tus límites absolutos son [X, Y, Z]. ¿Correcto?"
 
 ---
 

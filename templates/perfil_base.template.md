@@ -78,6 +78,25 @@ Cuando hay conflicto entre valores o decisiones de posicionamiento, priorizar en
 
 ---
 
+## 🏢 PREFERENCIAS LABORALES
+
+Estas preferencias se reutilizan en cada postulación: autocompletar campos de plataformas, filtrar ofertas incompatibles, y alimentar el SAS. No aparecen en el CV — son datos operativos.
+
+- **Modalidad:** [Remoto / Híbrido / Presencial / Flexible] — ¿Es negociable o deal-breaker?
+- **Ubicación:** [Ciudad actual] — ¿Dispuesto a reubicarse? ¿Zonas horarias aceptables?
+- **Pretensión salarial:** Mínimo: [X] / Ideal: [Y] — Moneda: [CLP/USD/EUR]
+- **Tipo de contrato:** [Indefinido / Plazo fijo / Freelance / Contractor — ¿Más de uno?]
+- **Disponibilidad:** [Inmediata / En X semanas / Actualmente empleado con preaviso de X]
+
+> **Ejemplo:**
+> - **Modalidad:** Remoto preferido, híbrido aceptable si la oferta es fuerte. Presencial es deal-breaker.
+> - **Ubicación:** Santiago, Chile. No dispuesto a reubicarse. Zona horaria: UTC-3 a UTC-5 (Américas).
+> - **Pretensión salarial:** Mínimo: $1.500.000 CLP / Ideal: $2.200.000 CLP
+> - **Tipo de contrato:** Indefinido o contractor. Freelance solo si es proyecto interesante.
+> - **Disponibilidad:** Disponible en 2 semanas.
+
+---
+
 ## 🚫 NON-NEGOTIABLES (Restricciones Absolutas)
 
 **NUNCA incluir en ningún output:**
