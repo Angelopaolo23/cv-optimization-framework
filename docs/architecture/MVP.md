@@ -77,26 +77,48 @@ No impone una voz corporativa genérica — busca profesionalizar respetando la 
 | Edición de perfil | "Acabo de aprender React" → actualiza el skill en la DB |
 | Preguntas de carrera | "¿Debería postular a este rol?" → análisis basado en el perfil |
 
-### 4. Adaptadores de Plataforma (Integrado al Chat)
+### 4. Soporte de Plataformas (Integrado al Chat)
 
-**No es una feature separada — es parte del flujo de conversación.**
+Hay **dos tipos de plataforma** que el usuario usa al postular, y el agente ayuda con ambas:
 
-Cuando el usuario genera contenido para un CV, puede decir: "la plataforma donde voy a armar el CV me pide también estos campos: [lista]". El agente genera contenido para esos campos adicionales.
+#### 4A. Plataformas de Creación de CV (CVMaker, Canva, etc.)
 
-**Schema Crowdsourced:**
+Cuando el usuario genera contenido, puede decir: "la plataforma donde armo el CV me pide también estos campos: [lista]". El agente genera contenido.
 
+**Schema crowdsourced:**
+1. Usuario menciona campos que necesita → agente genera contenido
+2. Backend registra como schema contribution
+3. Admin valida manualmente → se vuelve schema oficial
+4. Futuros usuarios obtienen esos campos proactivamente
+
+#### 4B. Plataformas de Postulación (GetOnBoard, LinkedIn Jobs, Computrabajo, etc.)
+
+Los portales de empleo tienen **tres capas de campos:**
+
+| Capa | Ejemplo | Predictibilidad | Quién lo resuelve |
+|---|---|---|---|
+| **1. Datos estándar** | Nombre, email, LinkedIn, teléfono | 100% — siempre iguales | Autocompletable desde el perfil |
+| **2. Campos fijos de plataforma** | Pretensión de renta, disponibilidad remoto, "¿por qué te interesa?" | Alta — mismos campos para todas las ofertas en esa plataforma | Schemas pre-creados (admin) + crowdsourced |
+| **3. Preguntas del empleador** | "¿Tienes experiencia con microservicios en producción?", "Describe un proyecto con [X]" | Baja — únicas por oferta | El usuario las pega, el agente responde |
+
+**Flujo en la postulación:**
 ```
-1. Usuario dice "CVMaker me pide 'Logro principal en 1 línea'"
-2. El agente genera el contenido
-3. Backend registra: { platform_hint: "CVMaker", field: "Logro principal en 1 línea", type: "short_text" }
-4. Admin (tú) valida manualmente entrando a CVMaker → confirma que el campo existe
-5. El campo se agrega al schema oficial de CVMaker
-6. Futuros usuarios que mencionen CVMaker obtienen esos campos proactivamente
+1. Agente genera CV content (como siempre)
+2. Agente pregunta: "¿En qué plataforma vas a postular?"
+   → Si la conocemos: "GetOnBoard te va a pedir [X, Y, Z]. Te los preparo."
+   → Si no: "¿Te pide algo adicional?"
+3. Agente genera respuestas para campos de plataforma (Capa 2)
+4. Usuario pega preguntas específicas del empleador (Capa 3)
+5. Agente genera respuestas COHERENTES con el CV ya generado
 ```
 
-**Por qué funciona:** No hay miles de plataformas. En Latam, el universo relevante es ~10-15 (CVMaker, GetOnBoard, LinkedIn, Computrabajo, Laborum, Indeed, etc.). La validación manual es viable y necesaria.
+**Por qué esto es poderoso:** Las respuestas al portal son coherentes con el CV. Si el Killer Summary dice "Full Stack con background en negocios", la respuesta a "¿Por qué te interesa este rol?" refuerza ese ángulo. Hoy la gente escribe CV y respuestas del portal por separado — sin coherencia.
 
-**Impacto:** El producto se adapta orgánicamente a lo que el mercado usa, sin necesidad de mantener integraciones.
+**Banco de preguntas frecuentes:** Muchas preguntas de empleadores se repiten ("¿Por qué quieres trabajar aquí?", "Describe un proyecto con X", "¿Cuál es tu mayor debilidad?"). El sistema acumula patrones y el agente tiene estrategias pre-definidas para cada tipo.
+
+**Schemas iniciales:** Admin crea manualmente ~5 schemas de plataformas principales (GetOnBoard, LinkedIn, Computrabajo, Indeed, Laborum) pre-MVP. El resto se acumula del uso real.
+
+**Universo de plataformas:** ~10-15 relevantes en Latam para IT. La validación manual es viable.
 
 ### 5. Scoring Engine (Determinista)
 
