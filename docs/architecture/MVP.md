@@ -69,13 +69,15 @@ No impone una voz corporativa genérica — busca profesionalizar respetando la 
 
 **Capacidades del agente en el chat:**
 
-| Capacidad | Descripción |
-|---|---|
-| Screening rápido | Pegar JD → score + veredicto en ~30 segundos |
-| CV completo | 7 fases del framework, interactivo |
-| Campos adicionales de plataforma | "Me piden [X, Y, Z]" → el agente genera contenido para esos campos |
-| Edición de perfil | "Acabo de aprender React" → actualiza el skill en la DB |
-| Preguntas de carrera | "¿Debería postular a este rol?" → análisis basado en el perfil |
+| Capacidad | Descripción | Sprint |
+|---|---|---|
+| Screening rápido | Pegar JD → score + veredicto en ~30 segundos | 1 |
+| CV completo | 7 fases del framework, interactivo | 1 |
+| Campos adicionales de plataforma | "Me piden [X, Y, Z]" → el agente genera contenido para esos campos | 1 |
+| Edición de perfil | "Acabo de aprender React" → actualiza el skill en la DB | 1 |
+| Preguntas de carrera | "¿Debería postular a este rol?" → análisis basado en el perfil | 1 |
+| **Refinamiento iterativo** | "Este bullet está mal — no lideré, coordiné" → corrige output + actualiza perfil | **2** |
+| **Research de empresa** | Busca info externa (Glassdoor, blog, noticias) para evaluar cultura real | **2** |
 
 ### 4. Soporte de Plataformas (Integrado al Chat)
 
@@ -138,6 +140,8 @@ Los portales de empleo tienen **tres capas de campos:**
 - Cache de clasificaciones previas
 - Alerta si una re-clasificación difiere significativamente de una anterior
 
+**Nota sobre SAS "Cultura" (Sprint 1 vs 2):** En Sprint 1, sin datos externos de la empresa, la dimensión "Valores y Cultura" del SAS se marca con baja confianza y se informa al usuario. No se asigna puntaje falso. En Sprint 2, Bing Search API permite evaluación real de cultura — este es un diferenciador core del producto.
+
 ### 6. Vista de Resultados
 
 No solo chat — una vista estructurada del output:
@@ -184,8 +188,10 @@ No solo chat — una vista estructurada del output:
 
 ## Lo que NO Hace el MVP
 
-| Feature | Por qué no | Cuándo |
+| Feature | Por qué no en Sprint 1 | Cuándo |
 |---|---|---|
+| **Refinamiento iterativo (ChatHistory)** | Pipeline funcional primero, iteración después | **Sprint 2 — core** |
+| **Web search de empresa (Bing API)** | Pipeline funcional primero, enrichment después | **Sprint 2 — core** |
 | Kanban de postulaciones | Tabla simple es suficiente | Cuando usuarios pidan mejor organización |
 | Voice-to-text | Requiere Azure Speech, no es core | Cuando onboarding por texto sea friction point |
 | RAG con vector DB | Perfiles pequeños caben en el prompt | Cuando haya escala |
@@ -196,6 +202,8 @@ No solo chat — una vista estructurada del output:
 | Multi-idioma | Español primero (Latam) | Cuando haya demanda en inglés |
 | Mobile app | Web responsive es suficiente | Si hay tracción mobile |
 | API pública | Solo la web consume el backend | Si hay demanda de integraciones |
+
+> **Nota importante:** Las dos primeras features (refinamiento iterativo y web search) están en Sprint 2 por orden de construcción, no por prioridad. Son **core para la propuesta de valor** — sin ellas el producto es un generador, no un Companion. El MVP no se considera completo hasta Sprint 2.
 
 ---
 
@@ -253,6 +261,8 @@ No solo chat — una vista estructurada del output:
 
 ## Estimación de Esfuerzo
 
+### Sprint 1 — Pipeline funcional (generación lineal)
+
 | Componente | Esfuerzo estimado | Dependencias |
 |---|---|---|
 | Supabase setup (schema + auth + RLS) | 1-2 días | Ninguna |
@@ -266,6 +276,20 @@ No solo chat — una vista estructurada del output:
 | Vista de resultados | 2-3 días | Agent genera output |
 | Historial (tabla) | 1 día | API de applications |
 | Landing page | 1-2 días | Ninguna |
-| **Total estimado** | **~20-30 días de desarrollo** | |
+| **Subtotal Sprint 1** | **~20-30 días** | |
 
-> **Nota:** Estos son días de desarrollo efectivo con Claude Code como copiloto. No incluye QA profundo, iteración de diseño, ni imprevistos. Factor realista: multiplicar por 1.5-2x.
+### Sprint 2 — El producto se vuelve Companion
+
+| Componente | Esfuerzo estimado | Dependencias |
+|---|---|---|
+| SK ChatHistory + persistencia de sesión | 2-3 días | Pipeline funcional (Sprint 1) |
+| Conectar correcciones iterativas con actualización de perfil | 1-2 días | ChatHistory + API profiles |
+| Bing Search API integration como tool de SK | 2-3 días | CultureRadarPlugin funcional |
+| SAS Cultura con datos reales (upgrade de dimensión) | 1 día | Bing Search integrado |
+| **Subtotal Sprint 2** | **~6-9 días** | |
+
+| | Estimación |
+|---|---|
+| **Total Sprint 1 + Sprint 2** | **~26-39 días de desarrollo** |
+
+> **Nota:** Estos son días de desarrollo efectivo con Claude Code como copiloto. No incluye QA profundo, iteración de diseño, ni imprevistos. Factor realista: multiplicar por 1.5-2x. El producto no se considera MVP completo hasta Sprint 2.

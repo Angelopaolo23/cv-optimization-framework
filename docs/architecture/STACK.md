@@ -89,11 +89,12 @@ A diferencia de la deuda técnica, la Deuda de Coherencia mide qué tan lejos es
 
 ### Agente de IA
 
-| Tecnología | Propósito |
-|---|---|
-| **Semantic Kernel (Python)** | Orquestación del agente con plugins tipados |
-| **Azure OpenAI** | Hosting de modelos LLM |
-| **Azure Content Safety** | Protección contra prompt injection y jailbreak |
+| Tecnología | Propósito | Sprint |
+|---|---|---|
+| **Semantic Kernel (Python)** | Orquestación del agente con plugins tipados | 1 |
+| **Azure OpenAI** | Hosting de modelos LLM | 1 |
+| **Azure Content Safety** | Protección contra prompt injection y jailbreak | 1 |
+| **Bing Search API** | Web search para CultureRadar (research de empresa, cultura real) | 2 |
 
 **Model routing:**
 

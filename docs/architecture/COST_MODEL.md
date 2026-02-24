@@ -31,6 +31,8 @@ Todo request que involucre un LLM pasa por Django. El frontend NUNCA habla direc
 | **Brand Coherence Audit** | GPT-4o | ~2,000 | ~800 | ~$0.015 |
 | **Mensaje de chat (onboarding, Q&A)** | GPT-4o | ~2,000 | ~500 | ~$0.01 |
 | **Validación Non-Negotiables** | Código Python | 0 | 0 | $0.00 |
+| **Research de empresa (Bing Search)** | Bing Search API | N/A | N/A | ~$0.005 (3 queries) |
+| **Refinamiento iterativo (por turno)** | GPT-4o | ~3,000 (context) | ~500 | ~$0.015 |
 | **Embedding para RAG** | text-embedding-3-small | ~500 | N/A | ~$0.00001 |
 
 ### Costo por Flujo Completo
@@ -38,26 +40,31 @@ Todo request que involucre un LLM pasa por Django. El frontend NUNCA habla direc
 | Flujo | Operaciones | Costo total estimado |
 |---|---|---|
 | **Screening Rápido** (Fases 1-2) | Intent + Clasificación + Scoring + Resumen | ~$0.05 |
+| **Screening + Research** (Sprint 2) | Screening + 3 Bing queries + cultura enriquecida | ~$0.06 |
 | **CV Completo** (7 fases) | Intent + Clasificación + Scoring + Summary + Bullets + Audit + Retro | ~$0.15 |
+| **CV Completo + Research** (Sprint 2) | CV Completo + Bing Search | ~$0.16 |
+| **Refinamiento** (3 turnos promedio) | 3x (Intent + Corrección con contexto) | ~$0.05 |
 | **Sesión de Onboarding** (~20 mensajes) | 20x (Intent + Chat) | ~$0.20 |
 | **Sesión de chat general** (~10 mensajes) | 10x (Intent + Chat) | ~$0.10 |
 
-### Costo Mensual por Usuario Tipo
+### Costo Mensual por Usuario Tipo (post-Sprint 2)
 
 | Tipo de usuario | Uso estimado/mes | Costo AI/mes |
 |---|---|---|
-| **Light** | 2 screenings + 1 CV + 10 chats | ~$0.35 |
-| **Normal** | 5 screenings + 3 CVs + 30 chats | ~$1.00 |
-| **Heavy** | 15 screenings + 8 CVs + 100 chats | ~$3.50 |
+| **Light** | 2 screenings + 1 CV + 3 refinamientos + 10 chats | ~$0.50 |
+| **Normal** | 5 screenings + 3 CVs + 10 refinamientos + 30 chats | ~$1.50 |
+| **Heavy** | 15 screenings + 8 CVs + 25 refinamientos + 100 chats | ~$5.00 |
 | **Abuser (sin protección)** | 500+ mensajes off-topic | ~$50+ ⚠️ |
+
+> **Impacto de Sprint 2:** Bing Search agrega ~$0.005/screening (despreciable). El refinamiento iterativo agrega ~$0.05 por sesión de 3 turnos (aceptable). El costo por usuario sube ~30-40%, pero el margen sigue siendo >80% para uso normal.
 
 ### Margen con $15/mes
 
 | Tipo | Costo AI | Costo infra | Total costo | Margen |
 |---|---|---|---|---|
-| Light | $0.35 | ~$0.50 | ~$0.85 | **94%** |
-| Normal | $1.00 | ~$0.50 | ~$1.50 | **90%** |
-| Heavy | $3.50 | ~$0.50 | ~$4.00 | **73%** |
+| Light | $0.50 | ~$0.50 | ~$1.00 | **93%** |
+| Normal | $1.50 | ~$0.50 | ~$2.00 | **87%** |
+| Heavy | $5.00 | ~$0.50 | ~$5.50 | **63%** |
 | Abuser | $50+ | ~$0.50 | $50+ | **NEGATIVO** |
 
 > **Conclusión:** El margen es excelente para uso legítimo. El intent classifier + quotas son críticos para prevenir el escenario de abuse.
@@ -76,7 +83,8 @@ Todo request que involucre un LLM pasa por Django. El frontend NUNCA habla direc
 | Redis (Railway addon o Upstash) | Free tier | $0 |
 | Azure OpenAI | Pay-as-you-go | Variable (ver arriba) |
 | Azure Content Safety | Free tier (1k calls/mes) luego pay-as-you-go | $0-5 |
-| **Total infra fijo** | | **~$5-10/mes** |
+| Bing Search API (Sprint 2) | S1 tier (1k calls/mes gratis, luego $7/1k) | $0-7 |
+| **Total infra fijo** | | **~$5-17/mes** |
 
 ### Growth (100-1,000 usuarios)
 

@@ -128,7 +128,9 @@ class CultureRadarResult(BaseModel):
     company_size_signal: Literal['startup', 'mid', 'enterprise', 'unknown']
 ```
 
-> **MVP — Sin web search:** En el MVP, `CultureRadarPlugin` opera únicamente con el texto del JD. Azure OpenAI no tiene web search nativo. El framework original requiere web search activo (Principio 9) — en el software esto se implementa como un tool de Bing Search API en V2, cuando se agregue. El gap es explícito y aceptado.
+> **Sprint 1 — Sin web search (degradación explícita):** En Sprint 1, `CultureRadarPlugin` opera únicamente con el texto del JD. Cuando no hay datos externos, la dimensión "Valores y Cultura" del SAS se marca con **baja confianza** y el sistema muestra al usuario: *"La evaluación de cultura está basada solo en el texto de la oferta. Para un análisis más completo, necesitaría investigar la empresa."* No se asigna un puntaje falso — se informa la limitación.
+>
+> **Sprint 2 — Bing Search API como tool de SK:** Se integra Bing Search API como tool del plugin. El agente busca: blog técnico, Glassdoor/reviews, noticias recientes, GitHub organizacional. La dimensión "Cultura" del SAS pasa a ser una evaluación real. Esto es parte del diferenciador core del producto: no solo optimiza el CV, evalúa si la oportunidad le *conviene* al usuario.
 
 ---
 
@@ -638,9 +640,35 @@ El Orchestrator emite las 4 preguntas obligatorias del `framework_protocol.md` a
 
 Solo después de recibir respuestas del usuario se invoca `RetrospectivePlugin.capture_learnings`.
 
-### SK ChatHistory — Decisión Diferida
+### SK ChatHistory — Sprint 2 (Core para iteración)
 
-En el MVP, el pipeline es **stateless por sesión** — no usa SK `ChatHistory`. El contexto de conversación se maneja via el `AgentContext` persistido en DB. Si en V2 se agrega conversación iterativa multi-turno en Fase 4 (el usuario refina respuestas de portal en varios mensajes), se evaluará integrar `ChatHistory` entonces.
+**Sprint 1:** El pipeline es lineal — el usuario pega JD, el agente ejecuta las fases, genera output. El contexto se maneja con `AgentContext` persistido en DB. No hay refinamiento multi-turno.
+
+**Sprint 2:** Se integra SK `ChatHistory` para habilitar **refinamiento iterativo**. Sin esto, el producto es un generador de texto, no un Companion.
+
+**Por qué es core (no nice-to-have):**
+- Si el Killer Summary tiene el tono incorrecto, el usuario necesita poder decir "hazlo menos formal" sin repetir todo el flujo
+- Si un Impact Bullet contiene un dato impreciso ("lideré" cuando en realidad "coordiné"), el usuario necesita corregirlo y que el agente aprenda
+- Si las respuestas del portal (Fase 4) necesitan ajustes, el usuario debe poder iterar en varios turnos
+- El principio "la segunda postulación es mejor que la primera" depende de que las correcciones alimenten el perfil
+
+**Puntos de iteración en el pipeline:**
+
+| Fase | Ejemplo de iteración |
+|------|---------------------|
+| 3 (Content) | "Este bullet está mal — no lideré el equipo, solo coordiné" → corrige bullet + actualiza perfil |
+| 4 (Application) | "La respuesta a '¿por qué te interesa?' no refleja mi motivación real" → refina |
+| 5 (Verification) | "Ese dato no es correcto, la reducción fue del 40%, no del 60%" → corrige |
+
+**Complejidad de implementación:**
+
+| Componente | Esfuerzo | Notas |
+|---|---|---|
+| Instanciar SK ChatHistory | Trivial | 5-10 líneas |
+| Persistir historial entre requests HTTP | 1-2 días | Guardar en DB con session_id, cargar al retomar |
+| Gestión de tokens (historial largo) | Medio | Solo incluir últimas N interacciones relevantes, no todo |
+| Conectar correcciones con actualización de perfil | 1-2 días | Cuando el usuario corrige un dato, actualizar `profiles`/`work_experiences` |
+| **Total estimado** | **2-3 días** | |
 
 ---
 
