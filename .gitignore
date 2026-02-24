@@ -15,3 +15,6 @@ CLAUDE.md
 
 # Development session state
 SESSION-STATE.json
+
+# Architecture docs (private - SaaS product)
+docs/architecture/
